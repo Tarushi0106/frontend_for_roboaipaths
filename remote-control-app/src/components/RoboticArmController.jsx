@@ -8,10 +8,10 @@ import './RoboticArmController.css';
 const RoboticArmController = () => {
   const [power, setPower] = useState(false);
   const [servoPositions, setServoPositions] = useState({
-    base: 90,      // servo1 - Left/Right (0-180)
-    shoulder: 90,  // servo2 - Up/Down (0-180)
-    elbow: 90,     // servo3 - X-axis (0-180)
-    gripper: 90    // servo4 - Y-axis (0-180, 90=neutral)
+    base: 90,     
+    shoulder: 90,  
+    elbow: 90,    
+    gripper: 90    
   });
 
   const handlePowerToggle = () => {
@@ -20,7 +20,6 @@ const RoboticArmController = () => {
     
     if (newPowerState) {
       sounds.success.play();
-      // Reset positions when turning on
       setServoPositions({
         base: 90,
         shoulder: 90,
@@ -45,7 +44,7 @@ const RoboticArmController = () => {
     if (action === 'press') {
       sounds.beep.play();
       
-      const step = 5; // Movement step size
+      const step = 5; 
       
       switch (direction) {
         case 'left':
@@ -70,14 +69,12 @@ const RoboticArmController = () => {
     if (!power) return;
 
     const { x, y } = position;
-    const step = 2; // Smaller step for smoother joystick control
+    const step = 2; 
 
-    // X-axis controls elbow
     if (Math.abs(x) > 0.1) {
       updateServoPosition('elbow', servoPositions.elbow + (x * step));
     }
 
-    // Y-axis controls gripper
     if (Math.abs(y) > 0.1) {
       updateServoPosition('gripper', servoPositions.gripper + (y * step));
     }
@@ -106,25 +103,19 @@ const RoboticArmController = () => {
 
     sounds.click.play();
     if (action === 'open') {
-      updateServoPosition('gripper', 180); // Fully open
+      updateServoPosition('gripper', 180); 
     } else if (action === 'close') {
-      updateServoPosition('gripper', 0); // Fully closed
+      updateServoPosition('gripper', 0); 
     }
   };
 
-  // Function to send commands to actual hardware (placeholder)
   const sendCommandToHardware = useCallback((servo, position) => {
-    // This is where you would send the command to your robotic arm
-    // For example: WebSocket, HTTP request, Serial communication, etc.
     console.log(`Moving ${servo} to position: ${position}°`);
     
-    // Example WebSocket implementation:
-    // if (websocket && websocket.readyState === WebSocket.OPEN) {
-    //   websocket.send(JSON.stringify({ servo, position }));
-    // }
+
   }, []);
 
-  // Send commands when positions change
+
   React.useEffect(() => {
     if (power) {
       Object.entries(servoPositions).forEach(([servo, position]) => {
@@ -144,7 +135,7 @@ const RoboticArmController = () => {
       </div>
 
       <div className="controller-body">
-        {/* Power Control */}
+
         <div className="control-section">
           <Button
             onClick={handlePowerToggle}
@@ -155,7 +146,6 @@ const RoboticArmController = () => {
           </Button>
         </div>
 
-        {/* Servo Position Display */}
         <div className="position-display">
           <div className="servo-position">
             <span>Base:</span>
@@ -199,9 +189,9 @@ const RoboticArmController = () => {
           </div>
         </div>
 
-        {/* Control Sections */}
+
         <div className="controls-grid">
-          {/* D-Pad Section */}
+     
           <div className="control-panel">
             <DPad 
               onDirectionChange={handleDirectionChange}
@@ -209,7 +199,6 @@ const RoboticArmController = () => {
             />
           </div>
 
-          {/* Joystick Section */}
           <div className="control-panel">
             <Joystick 
               onPositionChange={handleJoystickPositionChange}
@@ -218,7 +207,7 @@ const RoboticArmController = () => {
           </div>
         </div>
 
-        {/* Action Buttons */}
+    
         <div className="action-buttons">
           <Button
             onClick={handleResetPosition}

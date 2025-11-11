@@ -9,7 +9,7 @@ const RemoteControl = () => {
   const [currentChannel, setCurrentChannel] = useState(1);
   const [muted, setMuted] = useState(false);
 
-  // Initialize sound volumes
+
   useEffect(() => {
     Object.values(sounds).forEach(sound => {
       sound.volume(volume / 100);
@@ -31,7 +31,7 @@ const RemoteControl = () => {
     setVolume(clampedVolume);
     sounds.click.play();
     
-    // Update all sound volumes
+
     Object.values(sounds).forEach(sound => {
       sound.volume(clampedVolume / 100);
     });
@@ -64,7 +64,7 @@ const RemoteControl = () => {
     }
     
     sounds.click.play();
-    // In a real app, you might want to handle multi-digit channel numbers
+   
     setCurrentChannel(number);
   };
 
@@ -79,7 +79,7 @@ const RemoteControl = () => {
       </div>
 
       <div className="remote-body">
-        {/* Power Section */}
+    
         <div className="control-section">
           <Button
             onClick={handlePowerToggle}
@@ -90,7 +90,7 @@ const RemoteControl = () => {
           </Button>
         </div>
 
-        {/* Display */}
+    
         <div className="display-section">
           <div className="display">
             <div className="channel-display">
@@ -102,7 +102,7 @@ const RemoteControl = () => {
           </div>
         </div>
 
-        {/* Volume Controls */}
+  
         <div className="control-section">
           <div className="volume-controls">
             <Button
@@ -129,7 +129,7 @@ const RemoteControl = () => {
           </div>
         </div>
 
-        {/* Channel Controls */}
+     
         <div className="control-section">
           <div className="channel-controls">
             <Button
@@ -149,7 +149,7 @@ const RemoteControl = () => {
           </div>
         </div>
 
-        {/* Number Pad */}
+
         <div className="control-section">
           <div className="number-pad">
             {[1, 2, 3, 4, 5, 6, 7, 8, 9, 0].map((number) => (
@@ -166,7 +166,7 @@ const RemoteControl = () => {
           </div>
         </div>
 
-        {/* Quick Access Channels */}
+      
         <div className="control-section">
           <div className="quick-channels">
             <Button

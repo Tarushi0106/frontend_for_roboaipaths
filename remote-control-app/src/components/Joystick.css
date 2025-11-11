@@ -109,7 +109,6 @@
   text-shadow: 0 0 5px rgba(255, 0, 128, 0.5);
 }
 
-/* Mobile optimization */
 @media (max-width: 480px) {
   .joystick {
     width: 120px;

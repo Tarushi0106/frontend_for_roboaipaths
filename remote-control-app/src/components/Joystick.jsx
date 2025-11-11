@@ -28,7 +28,6 @@ const Joystick = ({ onPositionChange, disabled = false }) => {
 
     setPosition({ x: newX, y: newY });
     
-    // Normalize values to -1 to 1 range
     const normalizedX = newX / MAX_DISTANCE;
     const normalizedY = newY / MAX_DISTANCE;
     

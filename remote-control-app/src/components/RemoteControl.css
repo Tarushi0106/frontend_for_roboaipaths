@@ -136,7 +136,6 @@
   padding: 12px 8px !important;
 }
 
-/* Mobile Responsive */
 @media (max-width: 480px) {
   .remote-control {
     margin: 10px;
@@ -162,7 +161,6 @@
   }
 }
 
-/* Prevent text selection */
 .remote-control {
   -webkit-user-select: none;
   -moz-user-select: none;
