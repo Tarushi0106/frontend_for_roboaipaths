@@ -1,0 +1,171 @@
+.remote-control {
+  max-width: 400px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  font-family: 'Arial', sans-serif;
+  color: white;
+}
+
+.remote-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.remote-header h1 {
+  margin: 0 0 10px 0;
+  font-size: 24px;
+  color: #ecf0f1;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.power-led {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.power-led.on {
+  background: #2ecc71;
+  box-shadow: 0 0 10px #2ecc71;
+}
+
+.power-led.off {
+  background: #e74c3c;
+  box-shadow: 0 0 10px #e74c3c;
+}
+
+.remote-body {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.control-section {
+  display: flex;
+  justify-content: center;
+}
+
+.power-btn {
+  font-size: 18px !important;
+  padding: 20px 30px !important;
+  min-width: 200px;
+}
+
+.display-section {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding: 15px;
+  margin: 10px 0;
+}
+
+.display {
+  text-align: center;
+  font-family: 'Courier New', monospace;
+}
+
+.channel-display {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #3498db;
+}
+
+.volume-display {
+  font-size: 16px;
+  color: #bdc3c7;
+}
+
+.volume-controls {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.volume-controls .remote-button {
+  flex: 1;
+}
+
+.channel-controls {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  max-width: 200px;
+}
+
+.channel-controls .remote-button {
+  flex: 1;
+  font-size: 14px;
+}
+
+.number-pad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 100%;
+  max-width: 250px;
+}
+
+.number-btn {
+  aspect-ratio: 1;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.quick-channels {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.quick-channels .remote-button {
+  font-size: 14px;
+  padding: 12px 8px !important;
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+  .remote-control {
+    margin: 10px;
+    padding: 15px;
+    border-radius: 15px;
+  }
+
+  .remote-header h1 {
+    font-size: 20px;
+  }
+
+  .power-btn {
+    font-size: 16px !important;
+    padding: 15px 20px !important;
+  }
+
+  .channel-display {
+    font-size: 20px;
+  }
+
+  .volume-display {
+    font-size: 14px;
+  }
+}
+
+/* Prevent text selection */
+.remote-control {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

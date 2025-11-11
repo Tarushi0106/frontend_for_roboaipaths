@@ -1,0 +1,150 @@
+.remote-button {
+  border: none;
+  border-radius: 15px;
+  padding: 18px 25px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  touch-action: manipulation;
+  user-select: none;
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: transparent;
+  color: #00f3ff;
+  border: 2px solid;
+  box-shadow: 
+    0 0 20px rgba(0, 243, 255, 0.3),
+    inset 0 0 20px rgba(0, 243, 255, 0.1);
+}
+
+.remote-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 243, 255, 0.4), transparent);
+  transition: left 0.5s ease;
+}
+
+.remote-button:hover::before {
+  left: 100%;
+}
+
+.remote-button:active {
+  transform: scale(0.95) translateY(2px);
+  box-shadow: 
+    0 0 30px rgba(0, 243, 255, 0.6),
+    inset 0 0 20px rgba(0, 243, 255, 0.2);
+}
+
+.remote-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(0, 243, 255, 0.8);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+.remote-button:active::after {
+  animation: ripple 0.6s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(20, 20);
+    opacity: 0;
+  }
+}
+
+/* Button Variants */
+.remote-button.primary {
+  border-color: #00f3ff;
+  background: linear-gradient(145deg, rgba(0, 243, 255, 0.1), rgba(0, 143, 255, 0.05));
+  text-shadow: 0 0 10px rgba(0, 243, 255, 0.8);
+}
+
+.remote-button.secondary {
+  border-color: #ff0080;
+  color: #ff0080;
+  background: linear-gradient(145deg, rgba(255, 0, 128, 0.1), rgba(255, 0, 128, 0.05));
+  text-shadow: 0 0 10px rgba(255, 0, 128, 0.8);
+  box-shadow: 
+    0 0 20px rgba(255, 0, 128, 0.3),
+    inset 0 0 20px rgba(255, 0, 128, 0.1);
+}
+
+.remote-button.success {
+  border-color: #00ff88;
+  color: #00ff88;
+  background: linear-gradient(145deg, rgba(0, 255, 136, 0.1), rgba(0, 255, 136, 0.05));
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.8);
+  box-shadow: 
+    0 0 20px rgba(0, 255, 136, 0.3),
+    inset 0 0 20px rgba(0, 255, 136, 0.1);
+}
+
+.remote-button.warning {
+  border-color: #ffaa00;
+  color: #ffaa00;
+  background: linear-gradient(145deg, rgba(255, 170, 0, 0.1), rgba(255, 170, 0, 0.05));
+  text-shadow: 0 0 10px rgba(255, 170, 0, 0.8);
+  box-shadow: 
+    0 0 20px rgba(255, 170, 0, 0.3),
+    inset 0 0 20px rgba(255, 170, 0, 0.1);
+}
+
+.remote-button.danger {
+  border-color: #ff4444;
+  color: #ff4444;
+  background: linear-gradient(145deg, rgba(255, 68, 68, 0.1), rgba(255, 68, 68, 0.05));
+  text-shadow: 0 0 10px rgba(255, 68, 68, 0.8);
+  box-shadow: 
+    0 0 20px rgba(255, 68, 68, 0.3),
+    inset 0 0 20px rgba(255, 68, 68, 0.1);
+}
+
+.remote-button:disabled {
+  border-color: #666;
+  color: #666;
+  background: rgba(102, 102, 102, 0.1);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+.remote-button:disabled:active {
+  transform: none;
+}
+
+.remote-button:disabled::after {
+  display: none;
+}
+
+/* Hover effects */
+.remote-button:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 0 30px currentColor,
+    inset 0 0 30px rgba(255, 255, 255, 0.1);
+}
