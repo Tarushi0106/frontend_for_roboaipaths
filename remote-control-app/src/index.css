@@ -1,0 +1,26 @@
+/* Global theme variables for blue & yellow UI */
+:root {
+  --color-blue: #0b74ff;
+  --color-blue-200: rgba(11, 116, 255, 0.2);
+  --color-blue-300: rgba(11, 116, 255, 0.3);
+  --color-blue-400: rgba(11, 116, 255, 0.4);
+
+  --color-yellow: #ffd200;
+  --color-yellow-200: rgba(255, 210, 0, 0.2);
+  --color-yellow-300: rgba(255, 210, 0, 0.3);
+  --color-yellow-400: rgba(255, 210, 0, 0.4);
+
+  --bg-start: #071024;
+  --bg-mid: #082042;
+  --bg-end: #0b335a;
+
+  --glass: rgba(255,255,255,0.04);
+  --glass-border: rgba(255,255,255,0.06);
+
+  --text-on-dark: #ffffff;
+}
+
+/* Utility classes for consistency */
+.theme-blue-text { color: var(--color-blue); }
+.theme-yellow-text { color: var(--color-yellow); }
+.theme-glass { background: rgba(255,255,255,0.02); border: 1px solid var(--glass-border); }

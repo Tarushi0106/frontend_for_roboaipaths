@@ -4,13 +4,13 @@
   background: rgba(0, 0, 0, 0.6);
   border-radius: 25px;
   padding: 30px;
-  box-shadow: 
-    0 0 50px rgba(0, 243, 255, 0.3),
-    inset 0 0 50px rgba(0, 243, 255, 0.1);
-  border: 2px solid rgba(0, 243, 255, 0.5);
+  box-shadow:
+    0 0 50px var(--color-blue-200),
+    inset 0 0 50px var(--color-blue-200);
+  border: 2px solid var(--color-blue-300);
   backdrop-filter: blur(15px);
   font-family: 'Orbitron', sans-serif;
-  color: white;
+  color: var(--text-on-dark);
   position: relative;
   overflow: hidden;
 }
@@ -22,7 +22,7 @@
   left: -50%;
   width: 200%;
   height: 200%;
-  background: conic-gradient(from 0deg, transparent, rgba(0, 243, 255, 0.1), transparent, rgba(255, 0, 128, 0.1), transparent);
+  background: conic-gradient(from 0deg, transparent, var(--color-blue-200), transparent, var(--color-yellow-200), transparent);
   animation: rotate 10s linear infinite;
   z-index: -1;
 }
@@ -40,11 +40,11 @@
 .controller-header h1 {
   margin: 0 0 15px 0;
   font-size: 32px;
-  color: #00f3ff;
-  text-shadow: 
-    0 0 20px rgba(0, 243, 255, 0.8),
-    0 0 40px rgba(0, 243, 255, 0.4);
-  background: linear-gradient(45deg, #00f3ff, #ff0080);
+  color: var(--color-blue);
+  text-shadow:
+    0 0 20px var(--color-blue-300),
+    0 0 40px var(--color-blue-200);
+  background: linear-gradient(45deg, var(--color-blue), var(--color-yellow));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -58,8 +58,8 @@
   justify-content: center;
   gap: 15px;
   font-size: 16px;
-  color: #00f3ff;
-  text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+  color: var(--color-blue);
+  text-shadow: 0 0 10px var(--color-blue-200);
 }
 
 .power-led {
@@ -72,7 +72,7 @@
 
 .power-led.on {
   background: #00ff88;
-  box-shadow: 
+  box-shadow:
     0 0 20px #00ff88,
     0 0 40px #00ff88;
   animation: pulse-glow 1.5s ease-in-out infinite alternate;
@@ -80,7 +80,7 @@
 
 .power-led.off {
   background: #ff4444;
-  box-shadow: 
+  box-shadow:
     0 0 20px #ff4444,
     0 0 40px #ff4444;
 }
@@ -116,10 +116,10 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
-  border: 1px solid rgba(0, 243, 255, 0.3);
-  box-shadow: 
-    inset 0 0 20px rgba(0, 243, 255, 0.1),
-    0 0 20px rgba(0, 243, 255, 0.2);
+  border: 1px solid var(--color-blue-200);
+  box-shadow:
+    inset 0 0 20px var(--color-blue-200),
+    0 0 20px var(--color-blue-200);
 }
 
 .servo-position {
@@ -131,24 +131,24 @@
 .servo-position span {
   min-width: 100px;
   font-size: 16px;
-  color: #00f3ff;
-  text-shadow: 0 0 5px rgba(0, 243, 255, 0.5);
+  color: var(--color-blue);
+  text-shadow: 0 0 5px var(--color-blue-200);
   font-weight: 700;
 }
 
 .position-bar {
   flex: 1;
   height: 25px;
-  background: rgba(0, 243, 255, 0.1);
+  background: var(--color-blue-200);
   border-radius: 12px;
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(0, 243, 255, 0.3);
+  border: 1px solid var(--color-blue-200);
 }
 
 .position-fill {
   height: 100%;
-  background: linear-gradient(90deg, #00f3ff, #ff0080);
+  background: linear-gradient(90deg, var(--color-blue), var(--color-yellow));
   border-radius: 12px;
   transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   position: relative;
@@ -198,20 +198,20 @@
   flex-direction: column;
   align-items: center;
   border: 1px solid;
-  box-shadow: 
-    inset 0 0 20px rgba(0, 243, 255, 0.1),
-    0 0 30px rgba(0, 243, 255, 0.2);
+  box-shadow:
+    inset 0 0 20px var(--color-blue-200),
+    0 0 30px var(--color-blue-200);
 }
 
 .control-panel:first-child {
-  border-color: rgba(0, 243, 255, 0.5);
+  border-color: var(--color-blue-300);
 }
 
 .control-panel:last-child {
-  border-color: rgba(255, 0, 128, 0.5);
-  box-shadow: 
-    inset 0 0 20px rgba(255, 0, 128, 0.1),
-    0 0 30px rgba(255, 0, 128, 0.2);
+  border-color: var(--color-yellow-200);
+  box-shadow:
+    inset 0 0 20px var(--color-yellow-200),
+    0 0 30px var(--color-yellow-200);
 }
 
 .action-buttons {
@@ -274,15 +274,15 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(0, 243, 255, 0.1);
+  background: var(--color-blue-200);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(45deg, #00f3ff, #ff0080);
+  background: linear-gradient(45deg, var(--color-blue), var(--color-yellow));
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(45deg, #00c3ff, #ff0066);
+  background: linear-gradient(45deg, rgba(11,116,255,0.9), rgba(255,210,0,0.9));
 }
