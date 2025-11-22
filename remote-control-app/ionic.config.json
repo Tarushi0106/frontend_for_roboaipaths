@@ -1,0 +1,7 @@
+{
+  "name": "roboai",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}

@@ -35,7 +35,8 @@ const RoboticArmController = () => {
     try {
       let url;
       if (connectionMode === 'localhost') {
-        url = `http://localhost`;
+        // Default localhost mock server includes port 3000 for local testing
+        url = `http://localhost:3000`;
       } else {
         url = `http://${ipInput}`;
       }

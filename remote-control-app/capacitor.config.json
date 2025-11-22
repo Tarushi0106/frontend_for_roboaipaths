@@ -1,0 +1,5 @@
+{
+  "appId": "com.example.app",
+  "appName": "remote-control-app",
+  "webDir": "dist"
+}
